@@ -7,3 +7,10 @@
     <p id='ride-<%= ride.id %>' class='ride-block'><%= ride.name %></p>
   <% end %>
 </section>
+
+<section>
+  <%= form_tag "/mechanics/#{@mechanic.id}", method: :patch do %>
+    <%= text_field_tag 'new_ride' %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+</section>

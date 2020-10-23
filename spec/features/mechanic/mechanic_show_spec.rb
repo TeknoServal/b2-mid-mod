@@ -55,7 +55,7 @@ describe 'As a user' do
 
       fill_in('new_ride', with: 'Whoopy McWhoopFace')
 
-      click_button(Submit)]
+      click_button('Submit')
 
       expect(page).to have_current_path("/mechanics/#{@mechanic1.id}")
       expect(page).to have_content('Whoopy McWhoopFace')
