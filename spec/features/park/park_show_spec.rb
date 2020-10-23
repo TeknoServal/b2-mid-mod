@@ -18,13 +18,31 @@ describe 'As a visitor' do
   before(:each) do
     @park1 = Park.create!(name: 'Wonder Fun Land', admission_price: 25.50)
 
+    @ride1 = @park1.rides.create!(name: 'Poo Poo Pee Pants', thrill_rating: 4)
+    @ride2 = @park1.rides.create!(name: 'Holy Amazeballs', thrill_rating: 8)
+
+    @rides = [@ride1, @ride2]
   end
   describe 'When I visit an amusement parks show page' do
     it 'I see the name and price of admissions for that park' do
       visit "/parks/#{@park1.id}"
 
       expect(page).to have_content(@park1.name)
-      expect(page).to have_content(@park1.admission_price.to_s)
+      expect(page).to have_content(@park1.admission_price.round(2).to_s)
+    end
+
+    it 'I see the names of the rides at that park' do
+      visit "/parks/#{@park1.id}"
+
+      @rides.each do |ride|
+        expect(page).to have_content(ride.name)
+      end
+    end
+
+    it 'I see the average thrill rating of the rides here' do
+      visit "/parks/#{@park1.id}"
+
+      expect(page).to have_content(@park1.average_thrill_rating)
     end
   end
 end

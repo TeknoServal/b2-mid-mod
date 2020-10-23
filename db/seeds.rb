@@ -11,3 +11,10 @@
 @mechanic3 = Mechanic.create!(name: 'Harry', experience: 6)
 
 @park1 = Park.create!(name: 'Wonder Fun Land', admission_price: 25.50)
+
+@ride1 = @park1.rides.create!(name: 'Poo Poo Pee Pants', thrill_rating: 4)
+@ride2 = @park1.rides.create!(name: 'Holy Amazeballs', thrill_rating: 8)
+
+
+@mechanic1.rides << @ride1
+@mechanic1.rides << @ride2

@@ -1,0 +1,9 @@
+<h1><%= @mechanic.name %></h1>
+<h3><%= @mechanic.experience %> years of experience</h3>
+
+<section>
+  <h3>Current Rides:</h3>
+  <% @mechanic.alph_rides.each do |ride| %>
+    <p id='ride-<%= ride.id %>' class='ride-block'><%= ride.name %></p>
+  <% end %>
+</section>
