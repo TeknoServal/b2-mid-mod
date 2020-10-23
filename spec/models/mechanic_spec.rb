@@ -1,17 +1,16 @@
 require 'rails_helper'
 
-describe Ride, type: :model do
+describe Mechanic, type: :model do
   describe 'validations' do
     it do
       should validate_presence_of :name
-      should validate_presence_of :thrill_rating
+      should validate_presence_of :experience
     end
   end
 
   describe 'relationships' do
     it do
-      should belong_to :park
-      should have_many(:mechanics).through(:ride_mechanics)
+      should have_many(:rides).through(:ride_mechanics)
     end
   end
 end
