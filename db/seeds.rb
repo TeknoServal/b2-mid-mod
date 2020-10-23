@@ -9,3 +9,5 @@
 @mechanic1 = Mechanic.create!(name: 'Bob', experience: 7)
 @mechanic2 = Mechanic.create!(name: 'Carol', experience: 9)
 @mechanic3 = Mechanic.create!(name: 'Harry', experience: 6)
+
+@park1 = Park.create!(name: 'Wonder Fun Land', admission_price: 25.50)
