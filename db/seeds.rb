@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+@mechanic1 = Mechanic.create!(name: 'Bob', experience: 7)
+@mechanic2 = Mechanic.create!(name: 'Carol', experience: 9)
+@mechanic3 = Mechanic.create!(name: 'Harry', experience: 6)
