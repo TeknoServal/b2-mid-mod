@@ -22,8 +22,8 @@ describe 'As a user' do
 
       expect(page).to have_content('All Mechanics')
 
-      page.find('.mechanic-block').each_with_index do |block, idx|
-        within(@mechanics[idx]) do
+      page.find_all('.mechanic-block').each_with_index do |block, idx|
+        within("#mechanic-#{@mechanics[idx].id}") do
           expect(page).to have_content(@mechanics[idx].name)
           expect(page).to have_content(@mechanics[idx].experience)
         end
